@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if all_students %}
+{% for student in all_students %}
+<hr>
+<p>{{student.name}}</p>
+<p>{{student.surname}}</p>
+{% if student.lectures %}
+<p>Lecture:</p>
+{% for lecture in student.lectures %}
+<p>{{lecture.name}} {{lecture.length}}</p>
+{% endfor %}
+{% endif %}
+
+{% endfor %}
+{% endif %}
+<hr>
+<p><a href="{{ url_for('new_student')}}">New student</a></p>
+
+{% endblock %}

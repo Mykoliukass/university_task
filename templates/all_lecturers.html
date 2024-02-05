@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% if all_lecturers %}
+{% for lecturer in all_lecturers %}
+<hr>
+<p>{{lecturer.name}}</p>
+<p>{{lecturer.surname}}</p>
+{% if lecturer.lectures %}
+<p>Lecture:</p>
+{% for lecture in lecturer.lectures %}
+<p>{{lecture.name}} {{lecture.length}}</p>
+{% endfor %}
+{% endif %}
+
+{% endfor %}
+{% endif %}
+<hr>
+<p><a href="{{ url_for('new_lecturer')}}">New lecturer</a></p>
+
+{% endblock %}

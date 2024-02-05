@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="post" action="#">
+    {{ form.hidden_tag() }}
+    <div class="form-group">
+        {{ form.name.label(class="form-control-label") }}
+        {{ form.name(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.length.label(class="form-control-label") }}
+        {{ form.length(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.lecturer.label(class="form-control-label") }}
+        {{ form.lecturer(class="form-control") }}
+    </div>
+    <div class="form-group">
+        {{ form.students.label(class="form-control-label") }}
+        {{ form.students(class="form-control") }}
+    </div>    
+    {{ form.submit }}
+</form>
+{% endblock %}
